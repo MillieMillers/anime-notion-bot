@@ -360,13 +360,13 @@ def create_notion_page(data: dict) -> tuple[bool, str]:
     if data["mal_url"]:
         props[PROP["mal_url"]] = {"url": data["mal_url"]}
     if data["cover"]:
-    props["Image"] = {
-        "files": [{
-            "name": data["title"],
-            "type": "external",
-            "external": {"url": data["cover"]}
-        }]
-    }
+      props["Image"] = {
+          "files": [{
+              "name": data["title"],
+              "type": "external",
+              "external": {"url": data["cover"]}
+          }]
+      }
 
     payload = {"parent": {"database_id": DATABASE_ID}, "properties": props}
     if data["cover"]:
