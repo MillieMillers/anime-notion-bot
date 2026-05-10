@@ -367,6 +367,10 @@ def create_notion_page(data: dict) -> tuple[bool, str]:
               "external": {"url": data["cover"]}
           }]
       }
+      # Vincular con la pagina Stats
+      props["stats"] = {
+          "relation": [{"id": "35d455c3-a6c9-820c-a9d5-016d5066b3d2"}]
+      }
 
     payload = {"parent": {"database_id": DATABASE_ID}, "properties": props}
     if data["cover"]:
